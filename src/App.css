@@ -1,5 +1,69 @@
+
 .App {
   text-align: center;
+  background-image: url('./assets/flower-wall.jpg');
+  max-width:100%;
+  min-width:100%
+}
+
+.centerText{
+  text-align: center;
+  scroll-behavior: smooth
+  /* background: url('./assets/flowers-corner.jpg') no-repeat center center fixed;
+  transform: rotate(180deg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+
+}
+
+.cornerImage{
+  /* background: url('./assets/wheatblue.jpg') no-repeat top center fixed;
+  position:absolute;
+  top:0;
+  left:0 */
+/* width:'20%';
+height: 20%;
+margin-left:'-5rem';
+  position:sticky;
+  top:0;
+  right: 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+
+}
+
+.candem{
+  text-align: center;
+  /* background-image: url('./assets/water-beach.jpg'); */
+  background: url('./assets/candmsmaller.jpg') no-repeat center center ;
+
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+  /* max-width:100%;
+  min-width:100% */ 
+}
+
+.border{
+ /* background: url('./assets/black-border.png') no-repeat center center ;
+   border:'3px solid #682747';
+  border-radius: '3px'; */
+  background: url('./assets/black-border.png');
+  /* -webkit-background-size: contain;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* object-fit: fill; */
+  /* height: '100%';
+  width: 'auto'; */
+  
 }
 
 .App-logo {
@@ -15,6 +79,7 @@
 
 .App-header {
   background-color: #282c34;
+ 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,6 +88,22 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.palmBacked{
+  background-image: url('./assets/palm.jpg');
+  max-width:100%;
+ 
+  max-height:100%;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  object-fit: contain
+}
+
+/*prussian blue:#263A5B
+morning blue:#89A09E
+rich black:#12403C
+old mauve:#682747
+white:#FFFFFF */
 
 .App-link {
   color: #61dafb;
