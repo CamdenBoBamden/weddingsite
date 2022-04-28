@@ -15,6 +15,29 @@ class RoomRates extends Component {
                     <em>Room Rates</em>
                 </Typography>
                 <Grid container justifyContent={'center'}>
+                    <Grid item md={12}>
+                        <img
+                            src={require('../assets/image005.png')}
+                            alt="room rates"
+                        />
+                    </Grid>
+                    <Grid item md={12} style={{ marginTop: ' 1.5rem' }}>
+                        <Typography
+                            variant="subtitle"
+                            align="left"
+                            style={{ padding: '1.5rem' }}
+                        >
+                            Deluxe/1BR rates above are listed per PERSON.
+                            2bed/2bath and 3bed/3bath rates are listed per ROOM.
+                        </Typography>
+                    </Grid>
+                    <Grid item md={12} style={{ marginBottom: '1.5rem' }}>
+                        <Typography variant="subtitle" align="left">
+                            Ages 6 & under are free! 'Kids' are 6-18 years old.
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <Grid container justifyContent={'center'}>
                     <Grid item xs={11} md={9}>
                         <Carousel
                             autoPlay
@@ -75,15 +98,6 @@ class RoomRates extends Component {
                         </Carousel>
                     </Grid>
                 </Grid>
-                <Typography
-                    variant="h5"
-                    align="left"
-                    style={{ padding: '1.5rem' }}
-                >
-                    *insert Room Rates table* Deluxe/1BR rates above are listed
-                    per PERSON. 2BR/3BR rates are listed per ROOM. Ages 6 &
-                    under are free!
-                </Typography>
             </Grid>
         )
     }

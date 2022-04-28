@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react'
+import React, { Component } from 'react'
 import Grid from '@mui/material/Grid'
 import { Typography } from '@mui/material'
 import TextField from '@mui/material/TextField'
@@ -14,14 +14,19 @@ class CommentEntry extends Component {
     }
 
     updateBody = (e) => {
+        console.log('e', e.target.value)
         this.setState({ body: e.target.value })
     }
     updateAuthor = (e) => {
+        console.log('e', e.target.value)
         this.setState({ author: e.target.value })
     }
 
-    createEntry() {
-        this.props.client
+    createEntry = () => {
+        const client = contentful.createClient({
+            accessToken: process.env.REACT_APP_CONTENTFUL_MANAGEMENT_TOKEN,
+        })
+        client
             .getSpace('k8mm7z31obcw')
             .then((space) =>
                 space.getEnvironment(
@@ -43,13 +48,13 @@ class CommentEntry extends Component {
             .then((entry) => {
                 //entry id is under entry.sys.id
 
-                this.publishEntry(entry.sys.id)
+                this.publishEntry(entry.sys.id, client)
             })
             .catch(console.error)
     }
 
-    publishEntry(entryId) {
-        this.props.client
+    publishEntry(entryId, client) {
+        client
             .getSpace('k8mm7z31obcw')
             .then((space) =>
                 space.getEnvironment(
@@ -57,7 +62,11 @@ class CommentEntry extends Component {
                 )
             )
             .then((environment) => environment.getEntry(entryId))
-            .then((entry) => entry.publish())
+            .then((entry) =>
+                entry.publish().then(() => {
+                    this.props.refreshMessages()
+                })
+            )
 
             .catch(console.error)
     }
@@ -86,11 +95,12 @@ class CommentEntry extends Component {
                         </Grid>
                     </Grid>
                     <Grid container justifyContent="center">
-                        <Grid item xs={8}>
+                        <Grid item xs={12}>
                             <TextField
-                                style={{ width: '80%' }}
+                                style={{ width: '80%', margin: '2rem' }}
                                 id="standard-basic"
                                 // fullWidth
+                                multiline
                                 label="Add Comment..."
                                 variant="standard"
                                 onChange={this.updateBody}

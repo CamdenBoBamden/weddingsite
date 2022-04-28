@@ -14,7 +14,7 @@ class WhereAreWeGoing extends Component {
             <Grid item xs={10} md={8}>
                 <Typography
                     variant="h4"
-                    align="center"
+                    align="left"
                     style={{ margin: '1rem' }}
                 >
                     <em>I’m in! Where are we going?</em>

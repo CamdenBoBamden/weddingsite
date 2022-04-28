@@ -10,7 +10,7 @@ class Schedule extends Component {
                     align="left"
                     style={{ margin: '1rem' }}
                 >
-                    Schedule of Events
+                    <em>Schedule of Events</em>
                 </Typography>
                 <Typography
                     variant="h5"
@@ -18,16 +18,31 @@ class Schedule extends Component {
                     style={{ padding: '1.5rem' }}
                 >
                     <ul>
-                        <li>10/25 – 10/30 Cam and Em’s travel dates</li>
-                        <li>
-                            10/27 THURSDAY Welcome Dinner Time and location TBD
-                            (on-site)
+                        <li style={{ paddingBottom: '1rem' }}>
+                            10/25 – 10/30 Cam and Em’s travel dates
                         </li>
-                        <li>
-                            10/28 FRIDAY Wedding Day! 5:00 PM Ceremony at the
-                            Beachfront Gazebo 5:30 – 6:30 PM Cocktail Hour at
-                            TBD 6:30 – 10:30 PM Reception Dinner at the Beach
-                            10:30 PM onwards: Find a bar to continue the party!
+                        <li style={{ paddingBottom: '1rem' }}>
+                            10/27 THURSDAY Welcome Dinner
+                            <ul>
+                                <li>Time and location TBD (on-site)</li>
+                            </ul>
+                        </li>
+                        <li style={{ paddingBottom: '1rem' }}>
+                            10/28 FRIDAY Wedding Day!
+                            <ul>
+                                <li>
+                                    5:00 PM Ceremony at the Beachfront Gazebo
+                                </li>
+                                <li>5:30 – 6:30 PM Cocktail Hour at TBD</li>
+                                <li>
+                                    6:30 – 10:30 PM Reception Dinner on the
+                                    Beach
+                                </li>
+                                <li>
+                                    10:30 PM onwards: Find a bar to continue the
+                                    party!
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             Rest of your stay: play, eat, drink, lounge, go on

@@ -57,9 +57,12 @@ class WelcomeMessage extends Component {
                         /> 
                     </Grid>*/}
                 </Grid>
+                <Typography variant="h4">{`Our wedding will be on`}</Typography>
                 <Typography variant="h4">
-                    Our wedding will be on Friday, October 28, 2022 5:00 PM in
-                    Playa Del Carmen, Mexico.
+                    {` Friday, October 28, 2022 5:00 PM `}
+                </Typography>
+                <Typography variant="h4">
+                    {`in Playa Del Carmen, Mexico.`}
                 </Typography>
             </Grid>
         )

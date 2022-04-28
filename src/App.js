@@ -310,7 +310,9 @@ function App() {
                                     />
 
                                     {MainMessenger(messages)}
-                                    <CommentEntry client={client} />
+                                    <CommentEntry
+                                        refreshMessages={() => getMessageList()}
+                                    />
                                 </Paper>
                             ) : (
                                 // CommentField()

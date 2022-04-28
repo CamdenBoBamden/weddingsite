@@ -40,7 +40,7 @@ function a11yProps(index) {
 }
 
 export default function BasicTabs(navigateThere) {
-    const [value, setValue] = React.useState(9)
+    const [value, setValue] = React.useState(8)
 
     const handleChange = (event, newValue) => {
         setValue(newValue)
