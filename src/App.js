@@ -40,21 +40,8 @@ function App() {
     })
     const [messages, setMessages] = useState([])
     const [openMessenger, setMessenger] = useState(false)
-    //   function publishEntry(){
-    //     const client = contentful.createClient({
-    //       accessToken: 'a6YX34kss7-JgkCaHAlPqhAa-njc5066JsdrED3sM_4',
-    //     })
-
-    //     client.getSpace('<space_id>')
-    // .then((space) => space.getEnvironment('<environment_id>'))
-    // .then((environment) => environment.getEntry('<entry_id>'))
-    // .then((entry) => entry.publish())
-    // .then((entry) => console.log(`Entry ${entry.sys.id} published.`))
-    // .catch(console.error)
-    //   }
 
     const getMessageList = async () => {
-        console.log('hit get message list')
         await client
             .getSpace('k8mm7z31obcw')
             .then((space) =>
@@ -64,29 +51,24 @@ function App() {
             )
             .then((environment) => environment.getEntries())
             .then((response) => {
-                console.log(response.items)
                 setMessages(response.items)
                 setMessenger(!openMessenger)
-                // openMessenger1()
             })
             .catch(console.error)
     }
 
     const getSpace = async () => {
         const client = contentful.createClient({
-            accessToken: 'a6YX34kss7-JgkCaHAlPqhAa-njc5066JsdrED3sM_4',
+            accessToken: process.env.REACT_APP_CONTENTFUL_ACCESS_TOKEN,
             space: 'k8mm7z31obcw',
         })
-
-        let space = await client.getSpace('k8mm7z31obcw')
-        console.log('Space:', space)
     }
 
     const createEnvironment = async () => {
         client
             .getSpace('k8mm7z31obcw')
             .then((space) => space.createEnvironment({ name: 'myEnv' }))
-            .then((environment) => console.log(environment))
+
             .catch(console.error)
     }
 
@@ -99,7 +81,7 @@ function App() {
                 )
             )
             .then((environment) => environment.getContentTypes())
-            .then((response) => console.log(response.items))
+
             .catch(console.error)
     }
 
@@ -126,7 +108,7 @@ function App() {
                     },
                 })
             )
-            .then((entry) => console.log(entry))
+
             .catch(console.error)
     }
 
@@ -142,36 +124,14 @@ function App() {
                 environment.getEntry('1MDoM13ERGeFVVNSjfSoIg')
             )
             .then((entry) => entry.publish())
-            .then((entry) => console.log(`Entry ${entry.sys.id} published.`))
+
             .catch(console.error)
     }
 
-    function testContent() {
-        var client = contentful.createClient({
-            space: 'k8mm7z31obcw',
-            accessToken: 'a6YX34kss7-JgkCaHAlPqhAa-njc5066JsdrED3sM_4',
-        })
-
-        client.getEntry('6S4N4HpafSxSEFocPgoPjf').then(function (entry) {
-            console.log('entry', entry)
-            // logs the entry metadata
-            console.log(entry.sys)
-
-            // logs the field with ID title
-            console.log(entry.fields)
-        })
-    }
-    // const [value, setValue] = React.useState(0)
     function navigateThere(location) {
         const newLocation = document.getElementById(location)
-        console.log(
-            'new location',
-            newLocation,
-            '\noffset:',
-            newLocation.offsetTop
-        )
+
         window.scrollTo({
-            //top: newLocation['0'],
             top: newLocation.offsetTop,
             behavior: 'smooth',
         })
@@ -376,7 +336,7 @@ function App() {
                             </Grid>
                         ) : null} */}
                     </Grid>
-                    <button onClick={testContent}>Get Comment</button>
+
                     <button onClick={createEnvironment}>Create Env</button>
                     <button onClick={getSpace}>Get Space</button>
                     <button onClick={getContentTypes}>Get Content types</button>

@@ -9,20 +9,14 @@ import * as contentful from 'contentful-management'
 class CommentEntry extends Component {
     constructor(props) {
         super(props)
-        // Don't call this.setState() here!
+
         this.state = { author: '', body: '' }
     }
-    // const [author, setAuthor] = useState('')
-    // const [body, setBody] = useState('')
-    // const client = contentful.createClient({
-    //     accessToken: process.env.REACT_APP_CONTENTFUL_MANAGEMENT_TOKEN,
-    // })
+
     updateBody = (e) => {
-        console.log('e.target', e.target.value)
         this.setState({ body: e.target.value })
     }
     updateAuthor = (e) => {
-        console.log('e.target', e.target.value)
         this.setState({ author: e.target.value })
     }
 
@@ -48,7 +42,7 @@ class CommentEntry extends Component {
             )
             .then((entry) => {
                 //entry id is under entry.sys.id
-                console.log(entry)
+
                 this.publishEntry(entry.sys.id)
             })
             .catch(console.error)
@@ -57,10 +51,14 @@ class CommentEntry extends Component {
     publishEntry(entryId) {
         this.props.client
             .getSpace('k8mm7z31obcw')
-            .then((space) => space.getEnvironment('ifg9j4qnqxfb'))
+            .then((space) =>
+                space.getEnvironment(
+                    process.env.REACT_APP_CONTENFUL_GENERAL_ENV
+                )
+            )
             .then((environment) => environment.getEntry(entryId))
             .then((entry) => entry.publish())
-            .then((entry) => console.log(`Entry ${entry.sys.id} published.`))
+
             .catch(console.error)
     }
 
