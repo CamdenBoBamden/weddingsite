@@ -14,46 +14,15 @@ import PublishedComment from './PublishedComment'
 
 //var contentful = require('contentful')
 
-function MainMessenger () {
-    const [loading, setLoading] = useState(false)
-    const [messages, setMessages] = useState([])
-    const client = contentful.createClient({
-        accessToken: process.env.REACT_APP_CONTENTFUL_MANAGEMENT_TOKEN,
-    })
-
-    const fetchMessages = async () => {
-        let messages = await client
-
-            .getSpace('k8mm7z31obcw')
-            .then(space => space.getEnvironment('ifg9j4qnqxfb'))
-            .then(environment => environment.getEntries())
-            .then(response => {
-                console.log(response.items)
-                return response.items
-            })
-            .catch(console.error)
-        return messages
-    }
-
-    const getMessageList = async () => {
-        await client
-            .getSpace('k8mm7z31obcw')
-            .then(space => space.getEnvironment('ifg9j4qnqxfb'))
-            .then(environment => environment.getEntries())
-            .then(response => {
-                console.log(response.items)
-                setMessages(response.items)
-            })
-            .catch(console.error)
-    }
-
-    return loading ? (
-        <div>...loading</div>
-    ) : (
-        <Grid container justifyContent='center'>
-            <Grid item xs={8} style={{ backgroundColor: 'white' }}>
-                {!_.isEmpty(messages) &&
-                    messages.map((message, index) => {
+function MainMessenger(existingMessages) {
+    return (
+        <Grid container justifyContent="center" style={{ marginTop: '1rem' }}>
+            <Grid
+                item
+                xs={12} //style={{ backgroundColor: 'white' }}
+            >
+                {!_.isEmpty(existingMessages) &&
+                    existingMessages.map((message, index) => {
                         return PublishedComment(message, index)
                         // <div>
                         //     <p>FROM:{message.fields.author[`en-US`]}</p>
@@ -62,7 +31,6 @@ function MainMessenger () {
                         // </div>
                         //)
                     })}
-                <button onClick={getMessageList}>Get Messages</button>
             </Grid>
         </Grid>
     )

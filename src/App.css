@@ -6,6 +6,27 @@
   min-width:100%
 }
 
+.navBar{
+  background: #FFFFFF;
+
+z-index: 100;
+  margin: 0;
+  padding: 2px 0 0 12px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+ 
+}
+
+.messengerBox{
+  position:fixed;
+  bottom: 0;
+  right:0
+}
+
+.MuiTypography-root{
+font-family: 'Sawarabi Mincho', serif ;  
+}
 .centerText{
   text-align: center;
   scroll-behavior: smooth

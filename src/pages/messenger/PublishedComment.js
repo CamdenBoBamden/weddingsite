@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Grid from '@mui/material/Grid'
-function PublishedComment (comment, index) {
+function PublishedComment(comment, index) {
     return (
         <Grid
             container
             justifyContent={index % 2 === 0 ? 'flex-start' : 'flex-end'}
+            key={`comment-${index}`}
         >
             <Grid
                 item
