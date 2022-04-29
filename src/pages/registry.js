@@ -4,7 +4,7 @@ import { Typography } from '@mui/material'
 class Registry extends Component {
     render() {
         return (
-            <Grid item xs={10} md={8}>
+            <Grid item xs={11} md={8}>
                 <Typography
                     variant="h4"
                     align="left"

@@ -5,13 +5,8 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Carousel } from 'react-responsive-carousel'
 class WhereAreWeGoing extends Component {
     render() {
-        const images = [
-            { src: '../assets-fives/resort_pano.jpg', alt: 'cantina' },
-            { src: '../assets-fives/resort_pano.jpg', alt: 'cantina' },
-        ]
-
         return (
-            <Grid item xs={10} md={8}>
+            <Grid item xs={11} md={8}>
                 <Typography
                     variant="h4"
                     align="left"
@@ -69,10 +64,16 @@ class WhereAreWeGoing extends Component {
                     align="left"
                     style={{ padding: '1.5rem' }}
                 >
-                    We are staying at The Fives Beach Hotel & Residences, a
-                    family-friendly, all-inclusive resort in Playa Del Carmen,
-                    Mexico, located just 40-min south of Cancun International
-                    Airport (CUN). The wedding will be on-site.
+                    {` We are staying at `}
+                    <a
+                        href="https://www.thefiveshotels.com/resorts/the-fives-beach"
+                        rel="noopener noreferrer nofollow"
+                    >
+                        The Fives Beach Hotel & Residences
+                    </a>
+                    {`, a family-friendly, all-inclusive resort in Playa Del
+                    Carmen, Mexico, located just 40-min south of Cancun
+                    International Airport (CUN). The wedding will be on-site.`}
                 </Typography>
             </Grid>
         )

@@ -11,26 +11,30 @@ import _ from 'lodash'
 // main.js
 import * as contentful from 'contentful-management'
 import PublishedComment from './PublishedComment'
-
-//var contentful = require('contentful')
+import { List, ListItem } from '@mui/material'
 
 function MainMessenger(existingMessages) {
     return (
-        <Grid container justifyContent="center" style={{ marginTop: '1rem' }}>
-            <Grid
-                item
-                xs={12} //style={{ backgroundColor: 'white' }}
-            >
-                {!_.isEmpty(existingMessages) &&
-                    existingMessages.map((message, index) => {
-                        return PublishedComment(message, index)
-                        // <div>
-                        //     <p>FROM:{message.fields.author[`en-US`]}</p>
-                        //     <p>Subject:{message.fields.subject[`en-US`]}</p>
-                        //     <p>{message.fields.body[`en-US`]}</p>
-                        // </div>
-                        //)
-                    })}
+        <Grid
+            container
+            justifyContent="center"
+            style={{ marginTop: '1rem', zIndex: '200' }}
+        >
+            <Grid item xs={12}>
+                {!_.isEmpty(existingMessages) && (
+                    <List
+                        style={{
+                            maxHeight: '50vh',
+                            overflow: 'auto',
+                            display: 'flex',
+                            flexDirection: 'column-reverse',
+                        }}
+                    >
+                        {existingMessages.map((message, index) => {
+                            return PublishedComment(message, index)
+                        })}
+                    </List>
+                )}
             </Grid>
         </Grid>
     )

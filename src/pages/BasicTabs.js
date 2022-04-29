@@ -39,7 +39,7 @@ function a11yProps(index) {
     }
 }
 
-export default function BasicTabs(navigateThere) {
+export default function BasicTabs(navigateThere, getMessageList) {
     const [value, setValue] = React.useState(8)
 
     const handleChange = (event, newValue) => {
@@ -71,7 +71,7 @@ export default function BasicTabs(navigateThere) {
                 navigateThere('gifts')
                 break
             case 8:
-                navigateThere('message')
+                getMessageList()
                 break
             default:
                 break
@@ -82,12 +82,15 @@ export default function BasicTabs(navigateThere) {
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Grid container justifyContent="center">
-                    <Grid item xs={10}>
+                    <Grid item xs={12} md={8}>
                         <Tabs
+                            //centered
                             value={value}
                             onChange={handleChange}
                             aria-label="basic tabs example"
                             style={{ fontWeight: '600' }}
+                            variant="scrollable"
+                            scrollButtons="auto"
                         >
                             <Tab label="Where" {...a11yProps(0)} />
                             <Tab label="Schedule of events" {...a11yProps(1)} />

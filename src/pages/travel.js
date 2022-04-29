@@ -4,7 +4,7 @@ import { Typography } from '@mui/material'
 class Travel extends Component {
     render() {
         return (
-            <Grid item xs={10} md={8}>
+            <Grid item xs={11} md={8}>
                 <Typography
                     variant="h4"
                     align="left"
@@ -32,14 +32,25 @@ class Travel extends Component {
                     align="left"
                     style={{ padding: '1.5rem' }}
                 >
-                    protocols, masks, testing The Fives Test Antigen / PCR
-                    (thefiveshotels.com) Going to MX: Coming back to the US: All
-                    air passengers 2 years or older with a flight departing to
-                    the US from a foreign country are required show a negative
-                    COVID-19 viral test result taken no more than 1 day before
-                    travel, or documentation of having recovered from COVID-19
-                    in the past 90 days, before they board their
-                    flight.International Travel | CDC
+                    Travel Covid: protocols, masks, testing{' '}
+                    <a
+                        href="https://landings.thefiveshotels.com/test_registry?hsLang=en"
+                        rel="noopener noreferrer nofollow"
+                    >
+                        The Fives Test Antigen / PCR (thefiveshotels.com)
+                    </a>
+                    Going to MX: Coming back to the US: All air passengers 2
+                    years or older with a flight departing to the US from a
+                    foreign country are required show a negative COVID-19 viral
+                    test result taken no more than 1 day before travel, or
+                    documentation of having recovered from COVID-19 in the past
+                    90 days, before they board their flight.{` `}
+                    <a
+                        href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/international-travel/index.html"
+                        rel="noopener noreferrer nofollow"
+                    >
+                        International Travel | CDC
+                    </a>
                 </Typography>
             </Grid>
         )

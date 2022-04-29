@@ -1,14 +1,27 @@
 import { createTheme } from '@mui/material/styles'
-const theme = createTheme({
-    typography: {
-        fontFamily: "'Sawarabi Mincho', 'serif'",
-        fontWeightMedium: 400,
-    },
-    Tab: {
-        fontWeightMedium: 600,
 
-        color: 'black',
+let theme = createTheme()
+
+theme.components.MuiTypography = {
+    styleOverrides: {
+        root: {
+            fontFamily: "'Sawarabi Mincho', 'serif'",
+            [theme.breakpoints.down('md')]: {
+                fontSize: '1rem',
+                fontWeight: 400,
+            },
+        },
     },
-})
+}
+
+theme.components.MuiTab = {
+    styleOverrides: {
+        root: {
+            fontFamily: "'Sawarabi Mincho', 'serif'",
+            fontWeightMedium: 600,
+            color: 'black',
+        },
+    },
+}
 
 export default theme

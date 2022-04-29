@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Grid from '@mui/material/Grid'
-import { Typography } from '@mui/material'
+
 import TextField from '@mui/material/TextField'
 
 import Button from '@mui/material/Button'
@@ -14,11 +14,9 @@ class CommentEntry extends Component {
     }
 
     updateBody = (e) => {
-        console.log('e', e.target.value)
         this.setState({ body: e.target.value })
     }
     updateAuthor = (e) => {
-        console.log('e', e.target.value)
         this.setState({ author: e.target.value })
     }
 
@@ -76,19 +74,20 @@ class CommentEntry extends Component {
             <Grid container justifyContent="center">
                 <Grid
                     item
-                    xs={6}
+                    xs={12}
+                    md={8}
                     style={{
                         backgroundColor: 'white',
                         borderRadius: '8px',
-                        margin: '2rem',
-                        padding: '2rem',
+                        margin: '5px',
+                        padding: '5px',
                     }}
                 >
                     <Grid container justify="flex-start">
                         <Grid item xs={6}>
                             <TextField
                                 id="standard-basic"
-                                label="Name please"
+                                label="Name..."
                                 variant="standard"
                                 onChange={this.updateAuthor}
                             />
@@ -97,7 +96,7 @@ class CommentEntry extends Component {
                     <Grid container justifyContent="center">
                         <Grid item xs={12}>
                             <TextField
-                                style={{ width: '80%', margin: '2rem' }}
+                                style={{ width: '90%', margin: '.5rem ' }}
                                 id="standard-basic"
                                 // fullWidth
                                 multiline
@@ -106,7 +105,7 @@ class CommentEntry extends Component {
                                 onChange={this.updateBody}
                             />
                         </Grid>
-                        <Grid item xs={12} style={{ padding: '1rem' }}>
+                        <Grid item xs={12} style={{ padding: '.5rem' }}>
                             <Button
                                 variant="contained"
                                 onClick={this.createEntry}

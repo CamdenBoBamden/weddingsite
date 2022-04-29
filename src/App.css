@@ -30,11 +30,27 @@ li{
 .MuiTypography-root{
 font-family: 'Sawarabi Mincho', serif ;  
 }
+
+.bg{
+z-index:-1;opacity: .1;
+  /* Full height 
+*/
+  height: 100%;
+position:fixed;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* background: url('./assets/trees-up.jpg') no-repeat center center cover;
+  background-size: cover;*/
+  width:100%;
+  height:100%; 
+}
 .centerText{
   text-align: center;
-  scroll-behavior: smooth
-  /* background: url('./assets/flowers-corner.jpg') no-repeat center center fixed;
-  transform: rotate(180deg);
+  scroll-behavior: smooth;
+
+  /*  transform: rotate(180deg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

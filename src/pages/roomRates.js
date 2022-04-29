@@ -6,7 +6,7 @@ import { Carousel } from 'react-responsive-carousel'
 class RoomRates extends Component {
     render() {
         return (
-            <Grid item xs={10} md={8}>
+            <Grid item xs={11} md={8}>
                 <Typography
                     variant="h4"
                     align="left"
@@ -17,6 +17,7 @@ class RoomRates extends Component {
                 <Grid container justifyContent={'center'}>
                     <Grid item md={12}>
                         <img
+                            style={{ backgroundSize: 'fit', width: '80%' }}
                             src={require('../assets/image005.png')}
                             alt="room rates"
                         />

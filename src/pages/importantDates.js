@@ -4,7 +4,7 @@ import { Typography } from '@mui/material'
 class ImportantDates extends Component {
     render() {
         return (
-            <Grid item xs={10} md={8}>
+            <Grid item xs={11} md={8}>
                 <Typography
                     variant="h4"
                     align="left"
@@ -15,7 +15,7 @@ class ImportantDates extends Component {
                 <Typography
                     variant="h5"
                     align="left"
-                    style={{ padding: '1.5rem' }}
+                    style={{ padding: '1.5rem ' }}
                 >
                     <ul>
                         <li>

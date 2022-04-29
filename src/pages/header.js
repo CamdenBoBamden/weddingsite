@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid'
 class Header extends Component {
     render() {
         return (
-            <Grid item xs={12}>
+            <Grid item xs={11}>
                 <h1
                     style={{
                         color: 'black',
