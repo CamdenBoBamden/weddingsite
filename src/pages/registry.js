@@ -17,9 +17,11 @@ class Registry extends Component {
                     align="left"
                     style={{ padding: '1.5rem' }}
                 >
-                    {`  Your presence is more than enough present for us and we
-                        are eternally grateful you are able to join us in our
-                        celebrations!`}
+                    Making memories with you is worth more than anything we
+                    could ask for! Gifts are absolutely not expected.
+                    <br />
+                    <br />
+                    If you still feel inclined, *registry to follow* :)
                 </Typography>
             </Grid>
         )

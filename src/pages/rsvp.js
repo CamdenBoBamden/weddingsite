@@ -1,14 +1,7 @@
 import React, { Component } from 'react'
 import Grid from '@mui/material/Grid'
-import {
-    Typography,
-    FormControl,
-    Input,
-    FormHelperText,
-    InputLabel,
-} from '@mui/material'
-import FormPropsTextFields from './rsvpForm'
-import RsvpForm from './rsvpForm'
+import { Typography } from '@mui/material'
+
 class RSVP extends Component {
     render() {
         return (
@@ -25,14 +18,19 @@ class RSVP extends Component {
                     align="left"
                     style={{ padding: '1.5rem' }}
                 >
-                    Kindly RSVP by completing the form below by May 31, 2022. We
+                    Kindly RSVP by emailing Jess & Jayme at
+                    groups@hereandawaytravel.com with a completed Room
+                    Reservation Form request by <strong>May 31, 2022</strong>.
+                    (We attached the form in the Save-the-Date email; they can
+                    also provide it for you). Room rates are posted below. We
                     know this is a big ask and we absolutely understand if you
-                    are unable to attend, let us know either way.
+                    are unable to attend! Please let us know either way so we
+                    could plan accordingly.
                 </Typography>
                 <Grid container justifyContent={'center'}>
                     <Grid item xs={11} lg={8}>
                         {/* {FormPropsTextFields()} */}
-                        <RsvpForm />
+                        {/* <RsvpForm /> */}
                     </Grid>
                 </Grid>
             </Grid>

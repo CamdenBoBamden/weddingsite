@@ -17,16 +17,39 @@ class FAQs extends Component {
                     align="left"
                     style={{ padding: '1.5rem' }}
                 >
-                    {`How to reach us? Cam 573-397-8143, Em 626-534-5773
-                    Additional hotel info? Amenities // Activities // Kids Stuff
-                    // 15 Restaurants & Bars (Menus) What to bring? What’s the
-                    weather like in October? Cellphone service`}
                     <ul>
+                        <li>
+                            Additional hotel info? <br />
+                            <ul>
+                                <a
+                                    href="https://www.thefiveshotels.com/resorts/the-fives-beach/amenities"
+                                    rel="noopener noreferrer nofollow"
+                                >
+                                    Amenities
+                                </a>
+                                {' // '}
+                                <a
+                                    href="https://admin.thefives.com.mx/landing/entertainment?fbclid=IwAR0KbTRLX4g-NR3n31aA9qX5f1vG_NA1MzH66bBHaWruPB5QAJWIrdesin4"
+                                    rel="noopener noreferrer nofollow"
+                                >
+                                    Activities Schedule
+                                </a>
+                                {' // '}
+                                <a
+                                    href="https://landings.thefiveshotels.com/restaurantes-2020_temp?fbclid=IwAR08OSkqGC5sGiK1LEbcuBXPDWNlatPLqp-XGZFc-lK0JZkzm844aZMjABI"
+                                    rel="noopener noreferrer nofollow"
+                                >
+                                    15 Restaurants & Bars(Menus)
+                                </a>
+                            </ul>
+                            <br />
+                        </li>
+
                         <li>What’s included in all-inclusive package?</li>
                         <ul>
-                            Room, food (breakfast, lunch, dinner, snacks),
-                            beverages (alcoholic & non-alcoholic), resort
-                            activities
+                            Room, food (breakfast, lunch, dinner, snacks, room
+                            snacks), beverages (alcoholic & non-alcoholic),
+                            resort activities
                         </ul>
                     </ul>
                     <ul>
@@ -35,13 +58,14 @@ class FAQs extends Component {
                         </li>
                         <ul>
                             Room service fee $3.50 per order (all food is
-                            included, just pay for service fee) Coffee Shop (but
-                            don’t worry— coffee, cappuccinos, lattes etc are
-                            available at the restaurants) Smoothie Bar
-                            (smoothies are included, but protein powders are
-                            extra) Bali beds are available for rent per day
-                            (beach loungers are available first come first
-                            serve) What to bring? *find packing list somewhere*
+                            included, just pay for service fee) <br />
+                            Coffee Shop (but don’t worry— coffee, cappuccinos,
+                            lattes etc are available at the restaurants)
+                            <br />
+                            Smoothie Bar (smoothies are included, but protein
+                            powders are extra) <br />
+                            Bali beds are available for rent per day (beach
+                            loungers are available first come first serve)
                         </ul>
                     </ul>
                     <ul>
@@ -54,10 +78,10 @@ class FAQs extends Component {
                     <ul>
                         <li> Will I have cellphone service?</li>
                         <ul>
-                            Typically just put your phone on Airplane Mode and
-                            use Hotel wifi; use FB Messenger/WhatsApp for
-                            messaging; Check your phone plan for international
-                            roaming
+                            Typically you would just put your phone on Airplane
+                            Mode and use Hotel wifi; use Facebook
+                            Messenger/WhatsApp for messaging each other; Check
+                            your phone plan for International Roaming
                         </ul>
                     </ul>
                 </Typography>

@@ -5,7 +5,7 @@ import { ListItem, ListItemText, Typography } from '@mui/material'
 function PublishedComment(comment, index) {
     const commentDate = new Date(comment.sys.createdAt)
 
-    const dateFormat = moment(commentDate).format('ddd h:mm a')
+    const dateFormat = moment(commentDate).format('MM/DD ddd h:mm a')
 
     return (
         <ListItem key={`message-index-${index}`}>
@@ -22,6 +22,7 @@ function PublishedComment(comment, index) {
                         <Typography
                             variant="subtitle"
                             align={index % 2 === 0 ? 'left' : 'right'}
+                            style={{ color: '#FFFFFF' }}
                         >
                             {dateFormat}
                         </Typography>
@@ -29,7 +30,7 @@ function PublishedComment(comment, index) {
                 </Grid>
                 <Grid
                     item
-                    xs={6}
+                    xs={9}
                     style={{
                         backgroundColor:
                             index % 2 === 0 ? 'lightGreen' : 'lightBlue',

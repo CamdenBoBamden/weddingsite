@@ -1,17 +1,10 @@
-import logo from './logo.svg'
 import './App.css'
-import React, { useEffect, useState } from 'react'
-import { styled } from '@mui/material/styles'
-import Box from '@mui/material/Box'
+import React, { useState } from 'react'
 import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Grid'
-import { ClassNames } from '@emotion/react'
 import MainMessenger from './pages/messenger/MainMessenger'
 import MessageIcon from '@mui/icons-material/Message'
-import CommentField from './pages/messenger/CommentField'
-import ResponsiveAppBar from './pages/BasicTabs'
 import BasicTabs from './pages/BasicTabs'
-import { Typography } from '@mui/material'
 import Header from './pages/header'
 import WelcomeMessage from './pages/welcomeMessage'
 import Divider from '@mui/material/Divider'
@@ -24,7 +17,6 @@ import Travel from './pages/travel'
 import FAQs from './pages/faqs'
 import Registry from './pages/registry'
 import Button from '@mui/material/Button'
-import CommentIcon from '@mui/icons-material/Comment'
 import CloseIcon from '@mui/icons-material/Close'
 import CommentEntry from './pages/messenger/CommentEntry'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -42,6 +34,7 @@ function App() {
     const [openMessenger, setMessenger] = useState(false)
 
     const getMessageList = async () => {
+        navigateThere('where')
         await client
             .getSpace('k8mm7z31obcw')
             .then((space) =>

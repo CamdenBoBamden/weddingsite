@@ -1,17 +1,12 @@
 //In main messenger we will display all the messages
 //import logo from './logo.svg'
 //import './App.css'
-import React, { useState } from 'react'
-import { styled } from '@mui/material/styles'
-import Box from '@mui/material/Box'
-import Paper from '@mui/material/Paper'
+import React from 'react'
 import Grid from '@mui/material/Grid'
-import { ClassNames } from '@emotion/react'
 import _ from 'lodash'
 // main.js
-import * as contentful from 'contentful-management'
 import PublishedComment from './PublishedComment'
-import { List, ListItem } from '@mui/material'
+import { List } from '@mui/material'
 
 function MainMessenger(existingMessages) {
     return (

@@ -17,40 +17,56 @@ class Travel extends Component {
                     align="left"
                     style={{ padding: '1.5rem' }}
                 >
-                    We are working with travel agents from Here and Away Travel,
-                    Jess Sbriscia & Jayme Cornine. They have been incredibly
-                    helpful to us and will be assisting everyone in booking
-                    hotel rooms in our group and book flights as needed (you can
-                    book your own flights if you prefer). They will also arrange
-                    our airport transfers (shuttle) between the airport and the
-                    hotel. Airport transfers (CUN airport ↔ The Fives Beach
-                    Hotel): USA Transfers Travel Insurance: InsureMyTrip.com US
-                    Passport: Travel.State.gov
+                    We (Cam & Em) are traveling 10/25-10/30 (5 nights). Feel
+                    free to book travel dates that work best for you! <br />
+                    <br />
+                    We are holding a room block at the Fives Beach Hotel for our
+                    group! To book your reservations, please email our Travel
+                    Agents Jess & Jayme at{' '}
+                    <strong>groups@hereandawaytravel.com</strong> with a
+                    completed Room Reservation Form. They will give you a quote
+                    and provide you with a payment link. Minimum stay at the
+                    hotel is 3 nights. You will just have to put down a deposit
+                    by May 31, 2022 (minimum deposit of one night's stay) and
+                    you can make interest-free payments however you'd like up
+                    until the final payment due date of August 29, 2022 (60 days
+                    before the wedding). <br />
+                    <br />
+                    Let Jess & Jayme know if you’d like for them to book your
+                    flight as well. (You can book flights on your own, if you
+                    prefer; we know some people use travel points or whatnot)
+                    Just let them know your flight details once booked because
+                    they will be coordinating the airport transfers for our
+                    group (transportation between airport and hotel).
                 </Typography>
                 <Typography
                     variant="h5"
                     align="left"
                     style={{ padding: '1.5rem' }}
                 >
-                    Travel Covid: protocols, masks, testing{' '}
-                    <a
-                        href="https://landings.thefiveshotels.com/test_registry?hsLang=en"
-                        rel="noopener noreferrer nofollow"
-                    >
-                        The Fives Test Antigen / PCR (thefiveshotels.com)
-                    </a>
-                    Going to MX: Coming back to the US: All air passengers 2
-                    years or older with a flight departing to the US from a
-                    foreign country are required show a negative COVID-19 viral
-                    test result taken no more than 1 day before travel, or
-                    documentation of having recovered from COVID-19 in the past
-                    90 days, before they board their flight.{` `}
+                    <strong>COVID Travel Updates: </strong>
+                    <br />
+                    <br />
+                    Going to Mexico: Mexico currently does not require any
+                    vaccination for COVID-19, or a negative test to enter the
+                    country. <br />
+                    <br />
+                    Coming back to the US: All air passengers 2 years or older
+                    are required to show a negative COVID-19 viral test result
+                    taken no more than 1 day before travel, or documentation of
+                    having recovered from COVID-19 in the past 90 days, before
+                    they board their flight.{' '}
                     <a
                         href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/international-travel/index.html"
                         rel="noopener noreferrer nofollow"
                     >
                         International Travel | CDC
                     </a>
+                    <br />
+                    <br />
+                    The Fives Hotel has on-site COVID testing (antigen test) for
+                    $35 per person.
+                    {` `}
                 </Typography>
             </Grid>
         )

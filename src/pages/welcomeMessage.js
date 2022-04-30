@@ -17,11 +17,10 @@ class WelcomeMessage extends Component {
                     align="left"
                     style={{ padding: '1.5rem' }}
                 >
-                    We are very excited to invite you to our wedding-- we are
-                    getting married in Mexico! We are dreaming of several days
-                    of togetherness, friendship, and delicious food & drinks on
-                    the beach. It would be an honor to celebrate with the people
-                    we love most!
+                    We are getting married!!! In Mexico!!! We are dreaming of
+                    several days of togetherness, friendship, and delicious food
+                    & drinks on the beach. It would be an honor to celebrate
+                    with the people we love most.
                 </Typography>
                 <Grid container justifyContent={'center'} alignItems="flex-end">
                     {/* <Grid item xs={4}>

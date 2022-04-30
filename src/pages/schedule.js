@@ -19,34 +19,32 @@ class Schedule extends Component {
                 >
                     <ul>
                         <li style={{ paddingBottom: '1rem' }}>
-                            10/25 – 10/30 Cam and Em’s travel dates
+                            (10/25 – 10/30 are Cam and Em’s travel dates)
                         </li>
+                        <br />
                         <li style={{ paddingBottom: '1rem' }}>
-                            10/27 THURSDAY Welcome Dinner
+                            <strong>10/27 THURSDAY Welcome Dinner</strong>
                             <ul>
                                 <li>Time and location TBD (on-site)</li>
                             </ul>
-                        </li>
+                        </li>{' '}
+                        <br />
                         <li style={{ paddingBottom: '1rem' }}>
-                            10/28 FRIDAY Wedding Day!
+                            <strong>10/28 FRIDAY Wedding Day!</strong>
                             <ul>
                                 <li>
                                     5:00 PM Ceremony at the Beachfront Gazebo
                                 </li>
-                                <li>5:30 – 6:30 PM Cocktail Hour at TBD</li>
                                 <li>
-                                    6:30 – 10:30 PM Reception Dinner on the
-                                    Beach
+                                    Cocktail Hour and Reception Dinner on the
+                                    Beach to follow
                                 </li>
-                                <li>
-                                    10:30 PM onwards: Find a bar to continue the
-                                    party!
-                                </li>
-                            </ul>
+                            </ul>{' '}
+                            <br />
                         </li>
                         <li>
-                            Rest of your stay: play, eat, drink, lounge, go on
-                            excursions!
+                            Rest of your stay: Free play. Eat, drink, lounge, go
+                            on excursions!
                         </li>
                     </ul>
                 </Typography>

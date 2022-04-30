@@ -10,17 +10,25 @@ class CommentEntry extends Component {
     constructor(props) {
         super(props)
 
-        this.state = { author: '', body: '' }
+        this.state = { author: '', body: '', disableSend: true }
     }
 
     updateBody = (e) => {
+        this.state.author === '' || e.target.value === ''
+            ? this.setState({ disableSend: true })
+            : this.setState({ disableSend: false })
+
         this.setState({ body: e.target.value })
     }
     updateAuthor = (e) => {
+        this.state.body === '' || e.target.value === ''
+            ? this.setState({ disableSend: true })
+            : this.setState({ disableSend: false })
         this.setState({ author: e.target.value })
     }
 
     createEntry = () => {
+        this.setState({ disableSend: true })
         const client = contentful.createClient({
             accessToken: process.env.REACT_APP_CONTENTFUL_MANAGEMENT_TOKEN,
         })
@@ -62,6 +70,7 @@ class CommentEntry extends Component {
             .then((environment) => environment.getEntry(entryId))
             .then((entry) =>
                 entry.publish().then(() => {
+                    this.setState({ body: '' })
                     this.props.refreshMessages()
                 })
             )
@@ -89,6 +98,7 @@ class CommentEntry extends Component {
                                 id="standard-basic"
                                 label="Name..."
                                 variant="standard"
+                                value={this.state.author}
                                 onChange={this.updateAuthor}
                             />
                         </Grid>
@@ -100,6 +110,7 @@ class CommentEntry extends Component {
                                 id="standard-basic"
                                 // fullWidth
                                 multiline
+                                value={this.state.body}
                                 label="Add Comment..."
                                 variant="standard"
                                 onChange={this.updateBody}
@@ -108,6 +119,7 @@ class CommentEntry extends Component {
                         <Grid item xs={12} style={{ padding: '.5rem' }}>
                             <Button
                                 variant="contained"
+                                disabled={this.state.disableSend}
                                 onClick={this.createEntry}
                             >
                                 Send Message
