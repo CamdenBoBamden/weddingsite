@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
 import Grid from '@mui/material/Grid'
-import { Typography } from '@mui/material'
+import {
+    Typography,
+    FormControl,
+    Input,
+    FormHelperText,
+    InputLabel,
+} from '@mui/material'
+import FormPropsTextFields from './rsvpForm'
+import RsvpForm from './rsvpForm'
 class RSVP extends Component {
     render() {
         return (
@@ -19,10 +27,14 @@ class RSVP extends Component {
                 >
                     Kindly RSVP by completing the form below by May 31, 2022. We
                     know this is a big ask and we absolutely understand if you
-                    are unable to attend, let us know either way. YES form
-                    details: travel dates, airport, room type, name(s), age(s),
-                    food allergies NO
+                    are unable to attend, let us know either way.
                 </Typography>
+                <Grid container justifyContent={'center'}>
+                    <Grid item xs={11} lg={8}>
+                        {/* {FormPropsTextFields()} */}
+                        <RsvpForm />
+                    </Grid>
+                </Grid>
             </Grid>
         )
     }

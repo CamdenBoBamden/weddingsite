@@ -93,14 +93,14 @@ export default function BasicTabs(navigateThere, getMessageList) {
                             scrollButtons="auto"
                         >
                             <Tab label="Where" {...a11yProps(0)} />
-                            <Tab label="Schedule of events" {...a11yProps(1)} />
+                            <Tab label="Schedule" {...a11yProps(1)} />
                             <Tab label="Important Dates" {...a11yProps(2)} />
                             <Tab label="RSVP" {...a11yProps(3)} />
                             <Tab label="Room Rates" {...a11yProps(4)} />
                             <Tab label="travel" {...a11yProps(5)} />
                             <Tab label="FAQs" {...a11yProps(6)} />
                             <Tab label="Registry" {...a11yProps(7)} />
-                            <Tab label="Message board" {...a11yProps(8)} />
+                            <Tab label="Message" {...a11yProps(8)} />
                         </Tabs>
                     </Grid>
                 </Grid>
