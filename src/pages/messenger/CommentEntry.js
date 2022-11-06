@@ -10,23 +10,37 @@ class CommentEntry extends Component {
     constructor(props) {
         super(props)
 
-        this.state = { author: '', body: '', disableSend: true }
+        this.state = { author: '', body: '', disableSend: true, accessCode: '' }
     }
 
     updateBody = (e) => {
-        this.state.author === '' || e.target.value === ''
+        this.state.author === '' ||
+        e.target.value === '' ||
+        this.state.accessCode !== process.env.REACT_APP_COMMENT_CODE
             ? this.setState({ disableSend: true })
             : this.setState({ disableSend: false })
 
         this.setState({ body: e.target.value })
     }
     updateAuthor = (e) => {
-        this.state.body === '' || e.target.value === ''
+        this.state.body === '' ||
+        e.target.value === '' ||
+        this.state.accessCode !== process.env.REACT_APP_COMMENT_CODE
             ? this.setState({ disableSend: true })
             : this.setState({ disableSend: false })
+
         this.setState({ author: e.target.value })
     }
 
+    updateCode = (e) => {
+        this.state.body === '' ||
+        this.state.author === '' ||
+        e.target.value !== process.env.REACT_APP_COMMENT_CODE
+            ? this.setState({ disableSend: true })
+            : this.setState({ disableSend: false })
+
+        this.setState({ accessCode: e.target.value })
+    }
     createEntry = () => {
         this.setState({ disableSend: true })
         const client = contentful.createClient({
@@ -92,14 +106,25 @@ class CommentEntry extends Component {
                         padding: '5px',
                     }}
                 >
-                    <Grid container justify="flex-start">
+                    <Grid container justifyContent="space-between">
                         <Grid item xs={6}>
                             <TextField
                                 id="standard-basic"
                                 label="Name..."
+                                style={{ width: '80%' }}
                                 variant="standard"
                                 value={this.state.author}
                                 onChange={this.updateAuthor}
+                            />
+                        </Grid>
+                        <Grid item xs={6}>
+                            <TextField
+                                id="standard-basic-code"
+                                label="Super Secret Code"
+                                style={{ width: '80%' }}
+                                variant="standard"
+                                value={this.state.accessCode}
+                                onChange={this.updateCode}
                             />
                         </Grid>
                     </Grid>

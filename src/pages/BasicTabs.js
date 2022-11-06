@@ -47,31 +47,31 @@ export default function BasicTabs(navigateThere, getMessageList) {
 
         switch (newValue) {
             case 0:
-                navigateThere('where')
-                break
-            case 1:
                 navigateThere('schedule')
                 break
-            case 2:
-                navigateThere('dates')
-                break
-            case 3:
-                navigateThere('rsvp')
-                break
-            case 4:
-                navigateThere('roomRates')
-                break
-            case 5:
-                navigateThere('travel')
-                break
-            case 6:
+            case 1:
                 navigateThere('faqs')
                 break
+            case 2:
+                getMessageList()
+                break
+            case 3:
+                navigateThere('where')
+                break
+            case 4:
+                navigateThere('dates')
+                break
+            case 5:
+                navigateThere('rsvp')
+                break
+            case 6:
+                navigateThere('roomRates')
+                break
             case 7:
-                navigateThere('gifts')
+                navigateThere('travel')
                 break
             case 8:
-                getMessageList()
+                navigateThere('gifts')
                 break
             default:
                 break
@@ -82,7 +82,7 @@ export default function BasicTabs(navigateThere, getMessageList) {
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Grid container justifyContent="center">
-                    <Grid item xs={12} md={8}>
+                    <Grid item xs={12} md={7}>
                         <Tabs
                             //centered
                             value={value}
@@ -92,15 +92,17 @@ export default function BasicTabs(navigateThere, getMessageList) {
                             variant="scrollable"
                             scrollButtons="auto"
                         >
-                            <Tab label="Where" {...a11yProps(0)} />
                             <Tab label="Schedule" {...a11yProps(1)} />
+                            <Tab label="FAQs" {...a11yProps(6)} />
+                            <Tab label="Message" {...a11yProps(8)} />
+                            <Tab label="Where" {...a11yProps(0)} />
+
                             <Tab label="Important Dates" {...a11yProps(2)} />
                             <Tab label="RSVP" {...a11yProps(3)} />
                             <Tab label="Room Rates" {...a11yProps(4)} />
                             <Tab label="travel" {...a11yProps(5)} />
-                            <Tab label="FAQs" {...a11yProps(6)} />
+
                             <Tab label="Registry" {...a11yProps(7)} />
-                            <Tab label="Message" {...a11yProps(8)} />
                         </Tabs>
                     </Grid>
                 </Grid>

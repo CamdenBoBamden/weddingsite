@@ -49,14 +49,15 @@ class Travel extends Component {
                     <br />
                     Going to Mexico: Mexico currently does not require any
                     vaccination for COVID-19, or a negative test to enter the
-                    country. <br />
+                    country.
                     <br />
-                    Coming back to the US: All air passengers 2 years or older
-                    are required to show a negative COVID-19 viral test result
-                    taken no more than 1 day before travel, or documentation of
-                    having recovered from COVID-19 in the past 90 days, before
-                    they board their flight.{' '}
+                    <br />
+                    Masks may still be required in some areas! <br />
+                    <br />
+                    As of 6/12/22, COVID testing is no longer required coming
+                    back to the US.{' '}
                     <a
+                        target="_blank"
                         href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/international-travel/index.html"
                         rel="noopener noreferrer nofollow"
                     >

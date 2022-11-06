@@ -42,6 +42,21 @@ class ImportantDates extends Component {
                             <strong>MAY 31</strong>: Deadline to RSVP and put
                             down deposit for hotel booking
                         </li>
+                        <ul>
+                            <li>
+                                <strong>***</strong>You can still book past this
+                                date just let us know for our reception planning
+                                head count!
+                            </li>
+                        </ul>
+                    </ul>
+                    <ul>
+                        <li>
+                            <strong>AUGUST 15</strong>: Reach out to Jess &
+                            Jayme for your final payment link. Also, let them
+                            know your flight information so they can book your
+                            transfers! (shuttle between hotel & airport)
+                        </li>
                     </ul>
                     <ul>
                         <li>

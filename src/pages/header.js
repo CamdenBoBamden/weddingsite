@@ -9,17 +9,16 @@ class Header extends Component {
                         style={{
                             color: 'black',
                             marginTop: '4rem',
-                            fontSize: '4.5em',
+                            fontSize: '2.5em',
                             fontWeight: 300,
                         }}
                     >
-                        Camden & Em
+                        Cam & Em
                     </h1>
                     <h1
                         style={{
                             color: 'black',
-                            marginTop: '-4rem',
-                            fontSize: '3em',
+                            marginTop: '-2rem',
                             fontWeight: 300,
                         }}
                     >

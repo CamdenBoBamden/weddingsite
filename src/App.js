@@ -1,5 +1,5 @@
 import './App.css'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Grid'
 import MainMessenger from './pages/messenger/MainMessenger'
@@ -21,6 +21,9 @@ import CloseIcon from '@mui/icons-material/Close'
 import CommentEntry from './pages/messenger/CommentEntry'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { Carousel } from 'react-responsive-carousel'
+import { Typography } from '@mui/material'
+import Weather from './pages/weather'
+import MessagePreview from './pages/messagePreview'
 
 // main.js
 //var contentful = require('contentful');
@@ -33,8 +36,12 @@ function App() {
     const [messages, setMessages] = useState([])
     const [openMessenger, setMessenger] = useState(false)
 
+    useEffect(() => {
+        refreshMessageList()
+    }, [])
+
     const getMessageList = async () => {
-        navigateThere('where')
+        navigateThere('update')
         await client
             .getSpace('k8mm7z31obcw')
             .then((space) =>
@@ -156,6 +163,8 @@ function App() {
                 <Grid container className="cornerImage">
                     <Grid item xs={12} md={12} id="top">
                         <Header />
+                        <Weather />
+                        {MessagePreview(messages, getMessageList)}
                         <div className="navBar">
                             {BasicTabs(navigateThere, getMessageList)}
                         </div>
@@ -176,6 +185,31 @@ function App() {
                                 />
                             </Grid>
                         </Grid>
+                        <Divider variant="middle" style={{ margin: '3rem' }} />
+                        <Grid container justifyContent={'center'} id="update">
+                            <Grid item xs={11} md={8}>
+                                <Typography
+                                    variant="h4"
+                                    align="left"
+                                    style={{ margin: '1rem' }}
+                                >
+                                    <em>7/24/22 UPDATE!</em>
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid container justifyContent={'center'}>
+                            <Grid item xs={8}>
+                                <img
+                                    style={{
+                                        maxWidth: '65%',
+                                        backgroundSize: 'contain',
+                                    }}
+                                    src={require('./assets-fives/image0.jpg')}
+                                    alt="us"
+                                />
+                            </Grid>
+                        </Grid>
+
                         <Divider variant="middle" style={{ margin: '3rem' }} />
                         <Grid container justifyContent={'center'}>
                             <WelcomeMessage />

@@ -66,6 +66,7 @@ class WhereAreWeGoing extends Component {
                 >
                     {` We are staying at `}
                     <a
+                        target="_blank"
                         href="https://www.thefiveshotels.com/resorts/the-fives-beach"
                         rel="noopener noreferrer nofollow"
                     >

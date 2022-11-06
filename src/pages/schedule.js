@@ -25,7 +25,7 @@ class Schedule extends Component {
                         <li style={{ paddingBottom: '1rem' }}>
                             <strong>10/27 THURSDAY Welcome Dinner</strong>
                             <ul>
-                                <li>Time and location TBD (on-site)</li>
+                                <li>6:00 PM Grand Garden (on-site)</li>
                             </ul>
                         </li>{' '}
                         <br />
@@ -35,10 +35,8 @@ class Schedule extends Component {
                                 <li>
                                     5:00 PM Ceremony at the Beachfront Gazebo
                                 </li>
-                                <li>
-                                    Cocktail Hour and Reception Dinner on the
-                                    Beach to follow
-                                </li>
+                                <li>5:30 - 7:00 PM Cocktail hour at Zky Bar</li>
+                                <li>7:00 - 11:00 PM Reception on the beach</li>
                             </ul>{' '}
                             <br />
                         </li>
