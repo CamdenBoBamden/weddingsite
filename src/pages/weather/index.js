@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Grid, Button } from '@mui/material'
-function Weather() {
+function Weather () {
     const [cityLocation, setCityLocation] = useState('City?')
     const [forecast, setForecast] = useState(null)
     const [showWeather, setShowWeather] = useState(false)
 
     const httpRequest = new XMLHttpRequest()
 
-    const success = (data) => {
+    const success = data => {
+        console.log('Success ', data)
         getWeather(data.coords)
     }
-    const getWeather = (coords) => {
+    const getWeather = coords => {
         if (!httpRequest) {
             alert('Giving up :( Cannot create an XMLHTTP instance')
             return false
@@ -22,7 +23,7 @@ function Weather() {
         )
         httpRequest.send()
 
-        function alertContents() {
+        function alertContents () {
             if (httpRequest.readyState === XMLHttpRequest.DONE) {
                 if (httpRequest.status === 200) {
                     const res = JSON.parse(httpRequest.responseText)
@@ -40,7 +41,7 @@ function Weather() {
         }
     }
 
-    const getHourlyForecast = (url) => {
+    const getHourlyForecast = url => {
         if (!httpRequest) {
             alert('Giving up :( Cannot create an XMLHTTP instance')
             return false
@@ -49,7 +50,7 @@ function Weather() {
         httpRequest.open('GET', url)
         httpRequest.send()
 
-        function alertContents() {
+        function alertContents () {
             if (httpRequest.readyState === XMLHttpRequest.DONE) {
                 if (httpRequest.status === 200) {
                     const res = JSON.parse(httpRequest.responseText)
@@ -60,7 +61,8 @@ function Weather() {
             }
         }
     }
-    const error = (error) => {
+    const error = error => {
+        console.log('error', error)
         setCityLocation('Nope')
     }
 
@@ -68,9 +70,25 @@ function Weather() {
         navigator.geolocation.getCurrentPosition(success, error)
     }, [])
 
+    const shouldShowWeather = () => {
+        if (showWeather) {
+            setShowWeather(!showWeather)
+        } else {
+            checkAvailableWeather()
+        }
+    }
+
+    const checkAvailableWeather = () => {
+        if (forecast !== null) {
+            setShowWeather(!showWeather)
+        } else {
+            navigator.geolocation.getCurrentPosition(success, error)
+        }
+    }
+
     return (
         <div>
-            <Button onClick={() => setShowWeather(!showWeather)}>
+            <Button onClick={() => shouldShowWeather()}>
                 Camden's Weather - {cityLocation}
             </Button>
             {showWeather && (
@@ -93,7 +111,7 @@ function Weather() {
                                     <Grid item>{forecast.name}</Grid>{' '}
                                     <img
                                         src={forecast.icon}
-                                        alt="weather-icon"
+                                        alt='weather-icon'
                                     />
                                     <Grid item>
                                         {' '}
